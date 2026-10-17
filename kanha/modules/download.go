@@ -3321,6 +3321,16 @@ func repoHandler(c *td.Client, m *td.Message) error {
 		return nil
 	}
 
+	// Allow only the configured owner to use /repo.
+	if config.OwnerID == 0 || m.SenderID() != config.OwnerID {
+		_, err := m.ReplyText(
+			c,
+			"🔒 <b>ACCESS DENIED</b>\n\n⛔ Only the bot owner can use this command.",
+			&td.SendTextMessageOpts{ParseMode: td.ParseModeHTML},
+		)
+		return err
+	}
+
 	chatID := m.ChatID()
 	if m.IsPrivate() {
 		database.AddServedUser(chatID)
@@ -3337,11 +3347,9 @@ func repoHandler(c *td.Client, m *td.Message) error {
 		var ownerUser *td.User
 		if user, err := c.GetUser(config.OwnerID); err == nil && user != nil {
 			ownerUser = user
-		} else {
-			if _, err := c.CreatePrivateChat(config.OwnerID, nil); err == nil {
-				if user, err := c.GetUser(config.OwnerID); err == nil && user != nil {
-					ownerUser = user
-				}
+		} else if _, err := c.CreatePrivateChat(config.OwnerID, nil); err == nil {
+			if user, err := c.GetUser(config.OwnerID); err == nil && user != nil {
+				ownerUser = user
 			}
 		}
 
@@ -3352,7 +3360,6 @@ func repoHandler(c *td.Client, m *td.Message) error {
 				devURL = "https://t.me/" + ownerUser.Usernames.EditableUsername
 			}
 		}
-
 		if devURL == "" {
 			devURL = fmt.Sprintf("tg://openmessage?user_id=%d", config.OwnerID)
 		}
@@ -3366,11 +3373,7 @@ func repoHandler(c *td.Client, m *td.Message) error {
 	if c.Me != nil && c.Me.FirstName != "" {
 		botName = c.Me.FirstName
 	}
-
-	caption := F(chatID, "repo_text", locales.Arg{
-		"bot": botName,
-	})
-
+	caption := F(chatID, "repo_text", locales.Arg{"bot": botName})
 	markup := core.GetRepoMarkup(chatID, devURL)
 
 	img := config.RepoImage
@@ -3385,21 +3388,15 @@ func repoHandler(c *td.Client, m *td.Message) error {
 		lower := strings.ToLower(img)
 		if strings.HasSuffix(lower, ".mp4") || strings.HasSuffix(lower, ".mkv") || strings.HasSuffix(lower, ".webm") {
 			if _, err := m.ReplyVideo(c, td.InputFileRemote{Id: img}, &td.SendVideoOpts{
-				Caption:           caption,
-				ParseMode:         td.ParseModeHTML,
-				ReplyMarkup:       markup,
-				SupportsStreaming: true,
+				Caption: caption, ParseMode: td.ParseModeHTML, ReplyMarkup: markup, SupportsStreaming: true,
 			}); err == nil {
 				return nil
 			} else {
 				logger.Warnf("[repo] ReplyVideo failed: %v", err)
 			}
 		}
-
 		if _, err := m.ReplyPhoto(c, td.InputFileRemote{Id: img}, &td.SendPhotoOpts{
-			Caption:     caption,
-			ParseMode:   td.ParseModeHTML,
-			ReplyMarkup: markup,
+			Caption: caption, ParseMode: td.ParseModeHTML, ReplyMarkup: markup,
 		}); err == nil {
 			return nil
 		} else {
@@ -3408,8 +3405,7 @@ func repoHandler(c *td.Client, m *td.Message) error {
 	}
 
 	_, err := m.ReplyText(c, caption, &td.SendTextMessageOpts{
-		ParseMode:   td.ParseModeHTML,
-		ReplyMarkup: markup,
+		ParseMode: td.ParseModeHTML, ReplyMarkup: markup,
 	})
 	return err
 }
