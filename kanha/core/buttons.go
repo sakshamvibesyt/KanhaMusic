@@ -274,7 +274,7 @@ func GetStartMarkup(chatID int64) td.ReplyMarkup {
 				UrlBtn(F(chatID, "SUPPORT_BTN"), config.SupportChat),
 			},
 			{
-				UrlBtn(F(chatID, "SOURCE_BTN"), "https://github.com/Oyekanhaa/KanhaMusic"),
+				UrlBtn(F(chatID, "SOURCE_BTN"), "https://t.me/Sakshamvenus"),
 			},
 		},
 	}
