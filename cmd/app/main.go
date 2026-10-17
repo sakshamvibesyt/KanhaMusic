@@ -99,17 +99,87 @@ func main() {
 	core.Bot.Idle()
 }
 
+
 func startHTTPServer() {
 	go func() {
 		addr := "0.0.0.0:" + config.Port
+		mux := http.NewServeMux()
+
+		// UptimeRobot health-check endpoint
+		mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+			if r.Method != http.MethodGet {
+				w.WriteHeader(http.StatusMethodNotAllowed)
+				return
+			}
+
+			w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+			w.WriteHeader(http.StatusOK)
+			_, _ = io.WriteString(w, "KanhaMusic is running")
+		})
+
+		// Homepage
+		mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+			if r.URL.Path != "/" {
+				http.NotFound(w, r)
+				return
+			}
+
+			if r.Method != http.MethodGet {
+				w.WriteHeader(http.StatusMethodNotAllowed)
+				return
+			}
+
+			w.Header().Set("Content-Type", "text/html; charset=utf-8")
+			w.WriteHeader(http.StatusOK)
+
+			_, _ = io.WriteString(w, `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KanhaMusic</title>
+<style>
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	background: #100d1c;
+	color: white;
+	font-family: Arial, sans-serif;
+}
+.card {
+	text-align: center;
+	padding: 35px;
+	border: 1px solid #39304e;
+	border-radius: 20px;
+	background: #1c172b;
+	max-width: 340px;
+	margin: 20px;
+}
+h1 { color: #c4a7ff; }
+.status { color: #64e89a; }
+</style>
+</head>
+<body>
+<div class="card">
+<h1>🎵 KanhaMusic</h1>
+<p>Telegram Music Bot</p>
+<p class="status">● Web Server Online</p>
+<p>Music · Voice Chats · Assistant</p>
+</div>
+</body>
+</html>`)
+		})
 
 		logger.Infof("HTTP server listening on %s", addr)
 
-		if err := http.ListenAndServe(addr, nil); err != nil {
-			// logger.Fatalf("HTTP server failed: %v", err)
+		if err := http.ListenAndServe(addr, mux); err != nil {
+			logger.Infof("HTTP server failed: %v", err)
 		}
 	}()
 }
+
 
 func refreshDirs() error {
 	dirs := []string{
