@@ -980,7 +980,9 @@ speed_reset_success: "{emoji:✅} ᴘʟᴧʏʙᴧᴄᴋ sᴘєєᴅ ʀєsєᴛ �
 speed_set: "{emoji:🚀} ᴘʟᴧʏʙᴧᴄᴋ sᴘєєᴅ sєᴛ ᴛσ <b>{speed}x</b> ʙʏ {user}."
 
 
-start_private: "<blockquote>💜 <b>ʜᴇʏ {user}!</b></blockquote>\n<blockquote>🎧 <b>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ {bot}</b>\n\n✨ ʏᴏᴜʀ ᴘᴇʀsᴏɴᴀʟ ᴍᴜsɪᴄ ᴄᴏᴍᴘᴀɴɪᴏɴ!\n\n🎵 ᴍᴜsɪᴄ sᴛʀᴇᴀᴍɪɴɢ\n🎙️ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴍᴜsɪᴄ\n🤖 sᴍᴀʀᴛ ᴀssɪsᴛᴀɴᴛ sᴜᴘᴘᴏʀᴛ\n\n👑 <b>ᴏᴡɴᴇʀ:</b> @Sakshamvenus\n\n💜 ᴘʟᴀʏ ʏᴏᴜʀ ғᴀᴠᴏᴜʀɪᴛᴇ sᴏɴɢs ᴀɴᴅ ᴇɴᴊᴏʏ ᴛʜᴇ ᴠɪʙᴇ!\n\n👇 ᴜsᴇ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ sᴛᴀʀᴛᴇᴅ.</blockquote>"
+
+start_private: "💜 <b>ʜᴇʏ {user}!</b>\n\n<blockquote>🎧 <b>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ {bot}</b>\n✨ ʏᴏᴜʀ ᴘᴇʀsᴏɴᴀʟ ᴍᴜsɪᴄ ᴜɴɪᴠᴇʀsᴇ!</blockquote>\n\n<blockquote expandable>🎵 <b>ᴘʀᴇᴍɪᴜᴍ ғᴇᴀᴛᴜʀᴇs</b>\n\n🎶 ᴍᴜsɪᴄ sᴛʀᴇᴀᴍɪɴɢ\n🎙️ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴍᴜsɪᴄ\n🤖 sᴍᴀʀᴛ ᴀssɪsᴛᴀɴᴛ\n\n👑 <b>ᴏᴡɴᴇʀ:</b> <tg-spoiler>@Sakshamvenus</tg-spoiler>\n\n💜 <i>ᴍᴜsɪᴄ ɪs ᴍᴏʀᴇ ᴛʜᴀɴ sᴏᴜɴᴅ — ɪᴛ's ᴀ ᴠɪʙᴇ!</i>\n\n⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋᴀɴʜᴀᴍᴜsɪᴄ</blockquote>\n\n🫧 ||ᴛᴀᴘ ᴛᴏ ʀᴇᴠᴇᴀʟ ᴛʜᴇ ᴍᴀɢɪᴄ 💜||"
+
 
 call_discarded: "📴 ᴛʜє ᴠσɪᴄє ᴄʜᴧᴛ ᴡᴧs єηᴅєᴅ, sσ ᴘʟᴧʏʙᴧᴄᴋ ʜᴧs sᴛσᴘᴘєᴅ.\n\n💐 sᴛᴧʀᴛ ᴧ ηєᴡ ᴠσɪᴄє ᴄʜᴧᴛ ᴧηᴅ ᴜsє /play ᴧɢᴧɪη."
 
