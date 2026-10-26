@@ -1,3 +1,4 @@
+
 /*
  * ● KanhaMusic
  * ○ A high-performance engine for streaming music in Telegram voicechats.
@@ -35,16 +36,25 @@ func init() {
 <i>Displays general bot help or detailed information about a specific command.</i>
 
 <u>Usage:</u>
-<code>/help</code> — Show the main help menu.  
+<code>/help</code> — Show the main help menu.
 <code>/help &lt;command&gt;</code> — Show help for a specific command.
 
 For more info, visit our <a href="%s">Support Chat</a>.`, config.SupportChat)
+}
+
+// helpMainText adds a consistent title while retaining the existing localized menu.
+func helpMainText(chatID int64) string {
+	return "✨ <b>ᴋᴀɴʜᴀ ᴍᴜsɪᴄ • HELP CENTER</b>\n" +
+		"<i>Choose a category below to explore the commands.</i>\n\n" +
+		F(chatID, "help_main")
 }
 
 func helpHandler(c *td.Client, m *td.Message) error {
 	if isChannel(c, m) {
 		return nil
 	}
+
+	runCommandAnimation(c, m, "/help")
 
 	args := strings.Fields(m.Text())
 	if len(args) > 1 {
@@ -64,7 +74,7 @@ func helpHandler(c *td.Client, m *td.Message) error {
 		return err
 	}
 
-	_, err := m.ReplyText(c, F(m.ChatID(), "help_main"), &td.SendTextMessageOpts{
+	_, err := m.ReplyText(c, helpMainText(m.ChatID()), &td.SendTextMessageOpts{
 		ReplyMarkup: core.GetHelpKeyboard(m.ChatID()),
 	})
 	return err
@@ -79,13 +89,14 @@ func helpCB(c *td.Client, cb *td.UpdateNewCallbackQuery) error {
 	}
 
 	markup := core.GetHelpKeyboard(cb.ChatId)
+	text := helpMainText(cb.ChatId)
 
 	if isPhotoMessage(msg) {
-		_, err = cb.EditMessageCaption(c, F(cb.ChatId, "help_main"), &td.EditCaptionOpts{
+		_, err = cb.EditMessageCaption(c, text, &td.EditCaptionOpts{
 			ReplyMarkup: markup,
 		})
 	} else {
-		_, err = cb.EditMessageText(c, F(cb.ChatId, "help_main"), &td.EditTextMessageOpts{
+		_, err = cb.EditMessageText(c, text, &td.EditTextMessageOpts{
 			ReplyMarkup: markup,
 		})
 	}
@@ -98,6 +109,7 @@ func helpCallbackHandler(c *td.Client, cb *td.UpdateNewCallbackQuery) error {
 	if data == "" {
 		return nil
 	}
+
 	chatID := cb.ChatId
 	parts := strings.SplitN(data, ":", 2)
 	if len(parts) < 2 {
@@ -133,8 +145,10 @@ func helpCallbackHandler(c *td.Client, cb *td.UpdateNewCallbackQuery) error {
 	case "inline":
 		text = F(chatID, "help_inline")
 	case "main":
-		text = F(chatID, "help_main")
+		text = helpMainText(chatID)
 		btn = core.GetHelpKeyboard(chatID)
+	default:
+		return nil
 	}
 
 	msg, err := cb.GetMessage(c)
