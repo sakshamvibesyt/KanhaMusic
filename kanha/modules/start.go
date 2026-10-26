@@ -1,3 +1,4 @@
+
 /*
  * ● KanhaMusic
  * ○ A high-performance engine for streaming music in Telegram voicechats.
@@ -34,6 +35,7 @@ func startHandler(c *td.Client, m *td.Message) error {
 	}
 
 	if !m.IsPrivate() {
+		runCommandAnimation(c, m, "/start")
 		database.AddServedChat(m.ChatID())
 		_, err := m.ReplyText(c, F(m.ChatID(), "start_group"), nil)
 		return err
@@ -43,11 +45,15 @@ func startHandler(c *td.Client, m *td.Message) error {
 	sender, _ := m.GetUser(c)
 
 	if m.Args() == "pm_help" {
+		// helpHandler runs the help animation itself.
 		if err := helpHandler(c, m); err != nil {
 			return err
 		}
-	} else if err := handlePmStart(c, m, sender); err != nil {
-		return err
+	} else {
+		runCommandAnimation(c, m, "/start")
+		if err := handlePmStart(c, m, sender); err != nil {
+			return err
+		}
 	}
 
 	logStart(c, m, sender)
@@ -121,7 +127,7 @@ func isPhotoMessage(m *td.Message) bool {
 	return ok
 }
 
-// isChannelPost reports whether m came from a broadcast channel.
+// isChannel reports whether m came from a broadcast channel.
 func isChannel(c *td.Client, m *td.Message) bool {
 	chat, err := m.GetChat(c)
 	if err != nil {
@@ -133,9 +139,9 @@ func isChannel(c *td.Client, m *td.Message) bool {
 
 // mentionOf builds an HTML mention, falling back to a plain "user" mention
 // if sender is nil (e.g. GetUser failed).
-func mentionOf(sender *td.User, fallbackId int64) string {
+func mentionOf(sender *td.User, fallbackID int64) string {
 	if sender == nil {
-		return mentionOfName("user", fallbackId)
+		return mentionOfName("user", fallbackID)
 	}
 	return mentionOfName(strings.TrimSpace(sender.FirstName+" "+sender.LastName), sender.Id)
 }
