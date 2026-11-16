@@ -99,7 +99,6 @@ func main() {
 	core.Bot.Idle()
 }
 
-
 func startHTTPServer() {
 	go func() {
 		addr := "0.0.0.0:" + config.Port
@@ -179,7 +178,6 @@ h1 { color: #c4a7ff; }
 		}
 	}()
 }
-
 
 func refreshDirs() error {
 	dirs := []string{
