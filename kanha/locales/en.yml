@@ -13,6 +13,7 @@ START_HELP_BTN: " ʜєʟᴘ & ᴄσᴍᴍᴧηᴅs"
 UPDATES_BTN: " ᴜᴘᴅᴧᴛєs"
 SUPPORT_BTN: "sᴜᴘᴘσʀᴛ"
 SOURCE_BTN: " 💜 ᴏᴡɴᴇʀ"
+LANG_BTN: " ʟᴧηɢᴜᴧɢє"
 REPO_DEV_BTN: "ᴅєᴠєʟσᴘєʀ"
 REPO_BTN: "ʀєᴘσ"
 
@@ -378,9 +379,26 @@ flood_seconds: "⏳ sʟσᴡ ᴅσᴡη! ᴛʀʏ ᴧɢᴧɪη ɪη {duration} s�
 
 flood_minutes: "{emoji:⏳} ᴘʟєᴧsє ᴡᴧɪᴛ {duration} ᴍɪηᴜᴛєs ʙєғσʀє ᴜsɪηɢ ᴛʜɪs ᴄσᴍᴍᴧηᴅ ᴧɢᴧɪη."
 
+bug_usage: "{emoji:⚠️} <b>ᴘʟєᴧsє ᴅєsᴄʀɪʙє ᴛʜє ʙᴜɢ.</b>\n\nᴜsᴧɢє: {cmd} &lt;ᴘʀσʙʟєᴍ&gt; σʀ ʀєᴘʟʏ ᴛσ ᴧ ᴍєssᴧɢє."
+
+bug_thanks: "{emoji:✅} <b>ᴛʜᴧηᴋ ʏσᴜ ғσʀ ʏσᴜʀ ʙᴜɢ ʀєᴘσʀᴛ!</b>\nɪᴛ ʜᴧs ʙєєη sєηᴛ ᴛσ ᴛʜє ᴅєᴠєʟσᴘєʀs."
+
+bug_private_chat: "ᴘʀɪᴠᴧᴛє ᴄʜᴧᴛ"
+
+bug_reply_only: "<i>ʀєᴘʟʏ ʀєᴘσʀᴛ — sєє ғσʀᴡᴧʀᴅєᴅ ᴍєssᴧɢє.</i>"
+
+bug_report_format: |
+  {emoji:🐞} <b>ηєᴡ ʙᴜɢ ʀєᴘσʀᴛ</b>
+
+  <b>ғʀσᴍ:</b> {user} (<code>{user_id}</code>)
+  <b>ᴄʜᴧᴛ:</b> {chat} (<code>{chat_id}</code>)
+
+  <b>ʀєᴘσʀᴛ:</b>
+  <blockquote>{report}</blockquote>
+
 help_private_only: "{emoji:🤖} ʜɪ! ғσʀ ʙσᴛ ʜєʟᴘ ᴧηᴅ ᴄσᴍᴍᴧηᴅs, ᴘʟєᴧsє ᴅᴍ ᴍє ᴅɪʀєᴄᴛʟʏ — ɪ'ᴍ ᴍσʀє ʀєsᴘσηsɪᴠє ɪη ᴘʀɪᴠᴧᴛє ᴄʜᴧᴛs!"
 
-help_main: "<blockquote><b>🔮 єxᴘʟσʀє ᴛʜє ᴄσᴍᴘʟєᴛє ᴄσᴍᴍᴧηᴅ ɪηᴅєx ʙєʟσᴡ</b></blockquote>\n\n<blockquote><b>• ᴧᴄᴄєss єxᴘєʀᴛ ᴛєᴄʜηɪᴄᴧʟ ɢᴜɪᴅᴧηᴄє &amp; ʀєᴧʟ-ᴛɪᴍє sᴜᴘᴘσʀᴛ</b></blockquote>\n<blockquote><b>• єxєᴄᴜᴛє ᴧʟʟ ᴄσᴍᴍᴧηᴅs ᴜsɪηɢ sᴛᴧηᴅᴧʀᴅ ᴘʀєғɪx ➜</b></blockquote>\n"
+help_main: "<blockquote><b>🔮 єxᴘʟσʀє ᴛʜє ᴄσᴍᴘʟєᴛє ᴄσᴍᴍᴧηᴅ ɪηᴅєx ʙєʟσᴡ</b></blockquote>\n<blockquote><b>• ᴧᴄᴄєss єxᴘєʀᴛ ᴛєᴄʜηɪᴄᴧʟ ɢᴜɪᴅᴧηᴄє &amp; ʀєᴧʟ-ᴛɪᴍє sᴜᴘᴘσʀᴛ</b>\n<b>• єxєᴄᴜᴛє ᴧʟʟ ᴄσᴍᴍᴧηᴅs ᴜsɪηɢ sᴛᴧηᴅᴧʀᴅ ᴘʀєғɪx ➜</b></blockquote>"
 
 jump_no_active: "{emoji:⚠️} ησ ᴧᴄᴛɪᴠє ᴛʀᴧᴄᴋ ᴛσ ᴊᴜᴍᴘ ᴡɪᴛʜɪη."
 
@@ -468,6 +486,26 @@ logger_already: "ℹ️ ʟσɢɢєʀ ɪs ᴧʟʀєᴧᴅʏ {action}."
 logger_update_fail: "{emoji:❌} ғᴧɪʟєᴅ ᴛσ ᴜᴘᴅᴧᴛє ʟσɢɢєʀ sєᴛᴛɪηɢ: {error}"
 
 logger_updated: "{emoji:✅} ʟσɢɢєʀ ʜᴧs ʙєєη {action} sᴜᴄᴄєssғᴜʟʟʏ."
+
+vclog_join_count: "\n🔁 ᴊσɪη ᴄσᴜηᴛ ➛ <code>{count}</code>"
+
+vclog_join: "<b>🟢 #ᴊσɪηᴠɪᴅєσᴄʜᴧᴛ</b>\n<blockquote><b>ηᴧᴍє ➛ <a href=\"tg://user?id={user_id}\">{name}</a>\nɪᴅ ➛ <code>{user_id}</code>\nᴜsєʀηᴧᴍє ➛ {username}\n👥 ᴛσᴛᴧʟ ᴠᴄ ➛ <code>{total}</code></b></blockquote>"
+vclog_leave: "<b>🔴 #ʟєғᴛᴠɪᴅєσᴄʜᴧᴛ</b>\n<blockquote><b>ηᴧᴍє ➛ <a href=\"tg://user?id={user_id}\">{name}</a>\nɪᴅ ➛ <code>{user_id}</code>\nᴜsєʀηᴧᴍє ➛ {username}\n👥 ᴛσᴛᴧʟ ᴠᴄ ➛ <code>{total}</code></b></blockquote>"
+vclog_anon_usage: "⚠️ ᴧησηʏᴍσᴜs ᴧᴅᴍɪη\n\nᴜsє: <code>/vclogger on</code> σʀ <code>/vclogger off</code>"
+vclog_already_active: "ℹ️ <b>ᴠᴄ ʟσɢɢєʀ ɪs ᴧʟʀєᴧᴅʏ ᴧᴄᴛɪᴠє ɪη ᴛʜɪs ɢʀσᴜᴘ.</b>"
+vclog_enabled: "✅ <b>ᴠᴄ ʟσɢɢєʀ ʜᴧs ʙєєη єηᴧʙʟєᴅ!</b>"
+vclog_disabled: "🚫 <b>ᴠᴄ ʟσɢɢєʀ ʜᴧs ʙєєη ᴅɪsᴧʙʟєᴅ!</b>"
+vclog_no_permission: "❌ <b>ᴘєʀᴍɪssɪση ᴅєηɪєᴅ!</b>\n\n👮 <b>σηʟʏ ᴧᴅᴍɪηs σʀ σᴡηєʀs ᴄᴧη ᴜsє ᴠᴄ ʟσɢɢєʀ.</b>"
+vclog_invalid_arg: "❌ <b>ɪηᴠᴧʟɪᴅ ᴧʀɢᴜᴍєηᴛ</b>\n\n➜ <b>ᴜsᴧɢє :</b> <code>/vclogger [on / off]</code>"
+vclog_status: "🎙 <b>ᴠᴄ ʟσɢɢєʀ sᴛᴧᴛᴜs</b>\n\n➜ <b>ᴄᴜʀʀєηᴛ sᴛᴧᴛє :</b> {state}\n\n➜ <b>ᴜsᴧɢє :</b> <code>/vclogger [on / off]</code>"
+vclog_stats: "📊 <b>ᴠᴄ ʟσɢɢєʀ sᴛᴧᴛs</b>\n\n➜ <b>ʟσɢɢєʀ  :</b> {enabled}\n➜ <b>ᴍσηɪᴛσʀ :</b> {running}\n➜ <b>ᴜsєʀs ɪη ᴠᴄ :</b> <code>{count}</code>"
+vclog_admin_only: "❌ <b>ᴧᴅᴍɪη σηʟʏ!</b>"
+vclog_state_enabled: "єηᴧʙʟєᴅ ✅"
+vclog_state_disabled: "ᴅɪsᴧʙʟєᴅ ❌"
+vclog_enabled_short: "✅ єηᴧʙʟєᴅ"
+vclog_disabled_short: "❌ ᴅɪsᴧʙʟєᴅ"
+vclog_running: "🟢 ʀᴜηηɪηɢ"
+vclog_stopped: "🔴 sᴛσᴘᴘєᴅ"
 
 # Logs module
 logs_empty: "ησ ʟσɢs ғσᴜηᴅ"
@@ -638,14 +676,15 @@ playmode_restricted: "{emoji:🚫} ᴘʟᴧʏ ᴍσᴅє ɪs єηᴧʙʟєᴅ. �
 ping_start: "{emoji:🏓} ᴘɪηɢɪηɢ..."
 
 ping_result: |
-  <b>{emoji:🏓} ᴘσηɢ</b>: <code>{latency}ms</code>
-  
-  <b><u>{emoji:🤖} {bot} sʏsᴛєᴍ sᴛᴧᴛ's :</u></b>
-  
-  <b>ᴜᴘᴛɪᴍє:</b> {uptime}
-  <b>ʀᴧᴍ ᴜsᴧɢє:</b> {ram_info}
-  <b>ᴄᴘᴜ ᴜsᴧɢє:</b> {cpu_usage}
-  <b>ᴅɪsᴋ ᴜsᴧɢє:</b> {disk_usage}
+  ● <b>ᴘσηɢ:</b> <code>{latency}ms</code>
+
+  ● <b><u>{bot} sʏsᴛєᴍ sᴛᴧᴛ's :</u></b>
+
+  ● <b>ᴜᴘᴛɪᴍє:</b> {uptime}
+  ● <b>ʀᴧᴍ ᴜsᴧɢє:</b> {ram_info}
+  ● <b>ᴄᴘᴜ ᴜsᴧɢє:</b> {cpu_usage}
+  ● <b>ᴅɪsᴋ ᴜsᴧɢє:</b> {disk_usage}
+  ● <b>ʟɪʙʀᴧʀʏ :</b> ɢσ-ɢʀᴧᴍ
 
 position_now: |
   {emoji:🎵} <b>{title}</b>
@@ -979,11 +1018,7 @@ speed_reset_success: "{emoji:✅} ᴘʟᴧʏʙᴧᴄᴋ sᴘєєᴅ ʀєsєᴛ �
 
 speed_set: "{emoji:🚀} ᴘʟᴧʏʙᴧᴄᴋ sᴘєєᴅ sєᴛ ᴛσ <b>{speed}x</b> ʙʏ {user}."
 
-
-
-start_private: "💜 <b>ʜᴇʏ {user}!</b>\n\n<blockquote>🎧 <b>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ {bot}</b>\n✨ ʏᴏᴜʀ ᴘᴇʀsᴏɴᴀʟ ᴍᴜsɪᴄ ᴜɴɪᴠᴇʀsᴇ!</blockquote>\n\n<blockquote expandable>🎵 <b>ᴘʀᴇᴍɪᴜᴍ ғᴇᴀᴛᴜʀᴇs</b>\n\n🎶 ᴍᴜsɪᴄ sᴛʀᴇᴀᴍɪɴɢ\n🎙️ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴍᴜsɪᴄ\n🤖 sᴍᴀʀᴛ ᴀssɪsᴛᴀɴᴛ\n\n👑 <b>ᴏᴡɴᴇʀ:</b> <tg-spoiler>@Sakshamvenus</tg-spoiler>\n\n💜 <i>ᴍᴜsɪᴄ ɪs ᴍᴏʀᴇ ᴛʜᴀɴ sᴏᴜɴᴅ — ɪᴛ's ᴀ ᴠɪʙᴇ!</i>\n\n⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋᴀɴʜᴀᴍᴜsɪᴄ</blockquote>\n\n🫧 ||ᴛᴀᴘ ᴛᴏ ʀᴇᴠᴇᴀʟ ᴛʜᴇ ᴍᴀɢɪᴄ 💜||"
-
-
+start_private: "<blockquote><b>sᴧʟᴜᴛᴧᴛɪσɴs</b> {user},</blockquote>\n<blockquote expandable><b>✧ ᴡᴇʟᴄσᴍᴇ ᴛσ {bot} — ᴧ ᴘσᴡᴇʀғᴜʟ ᴧɴᴅ ʜɪɢʜ-sᴘᴇᴇᴅ ᴛɢ ᴍᴜsɪᴄ ʙσᴛ</b>\n<b>✧ ʙᴜɪʟᴛ ғσʀ sᴍσσᴛʜ • sᴛᴧʙʟᴇ • ʟᴧɢ-ғʀᴇᴇ ᴍᴜsɪᴄ sᴛʀᴇᴧᴍɪɴɢ</b>\n<b>✧ ᴘσᴡᴇʀᴇᴅ ʙʏ ᴧɴ σᴘᴛɪᴍɪᴢᴇᴅ ʏσᴜᴛᴜʙᴇ ᴧᴘɪ ғσʀ ɪɴsᴛᴧɴᴛ ᴘʟᴧʏʙᴧᴄᴋ</b>\n<b>✧ ᴇɴᴊσʏ ʜɪɢʜ ǫᴜᴧʟɪᴛʏ ᴧᴜᴅɪσ ᴡɪᴛʜ sᴇᴧᴍʟᴇss ᴄσɴᴛʀσʟ</b>\n<b>•──────────────•</b>\n<b>✧ ᴜsᴇ ʜᴇʟᴘ ᴛσ ᴠɪᴇᴡ ᴧʟʟ ᴄσᴍᴍᴧɴᴅs ᴧɴᴅ ғᴇᴧᴛᴜʀᴇs</b></blockquote> "
 call_discarded: "📴 ᴛʜє ᴠσɪᴄє ᴄʜᴧᴛ ᴡᴧs єηᴅєᴅ, sσ ᴘʟᴧʏʙᴧᴄᴋ ʜᴧs sᴛσᴘᴘєᴅ.\n\n💐 sᴛᴧʀᴛ ᴧ ηєᴡ ᴠσɪᴄє ᴄʜᴧᴛ ᴧηᴅ ᴜsє /play ᴧɢᴧɪη."
 
 start_group: "<b>{emoji:💫} ɪ’ᴍ ʜєʀє!</b> ᴛʀʏ ᴧ ᴄσᴍᴍᴧηᴅ… ɪғ ʏσᴜ ᴛʜɪηᴋ ʏσᴜ ᴄᴧη ʜᴧηᴅʟє ᴍє {emoji:😉}"
@@ -1072,11 +1107,11 @@ playlist_list_line: "- {name} (<code>{id}</code>)"
 playlist_list: "<b>ᴍʏ ᴘʟᴧʏʟɪsᴛs</b>\n\n{playlists}"
 
 # Commands help
-help_admin: "⊚ <b><u>ᴧᴅᴍɪη ᴄσᴍᴍᴧηᴅs :</u></b>\n\n<blockquote>💮 <b>ᴊᴜsᴛ ᴧᴅᴅ ᴄ ᴧs ᴧ ᴘʀєғɪx ᴛσ ᴛʜє ᴄσᴍᴍᴧηᴅs ᴛσ ᴄσηᴛʀσʟ ᴄʜᴧηηєʟ sᴛʀєᴧᴍɪηɢ.</b></blockquote>\n\n<blockquote>➻ <b>/pause</b> : ʜᴧʟᴛ ᴛʜє ᴄᴜʀʀєηᴛʟʏ ᴧᴄᴛɪᴠє sᴛʀєᴧᴍ.\n➻ <b>/resume</b> : ʀєsᴛᴧʀᴛ ᴛʜє ᴘᴧᴜsєᴅ ᴘʟᴧʏʙᴧᴄᴋ.\n➻ <b>/skip</b> : ᴘʟᴧʏ ᴛʜє ηєxᴛ ᴛʀᴧᴄᴋ ɪη ᴛʜє ǫᴜєᴜє.\n➻ <b>/askip</b> : ᴘʟᴧʏ ᴛʜє ηєxᴛ ᴛʀᴧᴄᴋ ɪη ᴛʜє ᴧᴜᴛσᴘʟᴧʏ ǫᴜєᴜє.\n➻ <b>/stop</b> : ᴄєᴧsє ᴛʜє sᴛʀєᴧᴍ ᴧηᴅ єᴍᴘᴛʏ ǫᴜєᴜє.\n➻ <b>/mute</b> : ᴍᴜᴛє ᴘʟᴧʏʙᴧᴄᴋ ɪη ᴠɪᴅєσᴄʜᴧᴛ.\n➻ <b>/unmute</b> : ᴜηᴍᴜᴛє ᴘʟᴧʏʙᴧᴄᴋ ɪη ᴠɪᴅєσᴄʜᴧᴛ.\n➻ <b>/queue</b> : ᴠɪєᴡ ᴛʜє ʟɪsᴛ σғ ᴜᴘᴄσᴍɪηɢ ᴛʀᴧᴄᴋs.\n➻ <b>/jump</b> : ᴊᴜᴍᴘ ᴛσ ᴧ ɢɪᴠєη ᴛɪᴍє ɪη ᴛʀᴧᴄᴋ.\n➻ <b>/move</b> : ᴍσᴠє ᴧ ǫᴜєᴜєᴅ ᴛʀᴧᴄᴋ ᴛσ ᴧησᴛʜєʀ ᴘσsɪᴛɪση.\n➻ <b>/clear</b> : ᴄʟєᴧʀ ᴧʟʟ sσηɢs ғʀσᴍ ǫᴜєᴜє.\n➻ <b>/remove</b> : ʀєᴍσᴠє ᴧ sᴘєᴄɪғɪᴄ ᴛʀᴧᴄᴋ ғʀσᴍ ǫᴜєᴜє.\n➻ <b>/loop [1-10]</b> : ʀєᴘєᴧᴛ ᴛʜє ᴄᴜʀʀєηᴛʟʏ ᴘʟᴧʏɪηɢ sσηɢ.\n➻ <b>/shuffle</b> : ʀᴧηᴅσᴍɪᴢє ᴛʜє ǫᴜєᴜєᴅ ᴘʟᴧʏʟɪsᴛ.\n➻ <b>/seek [sєᴄs]</b> : ғσʀᴡᴧʀᴅ sєєᴋ ᴛσ ᴧ sᴘєᴄɪғɪᴄ ᴛɪᴍє.\n➻ <b>/seekback [sєᴄs]</b> : ʀєᴠєʀsє sєєᴋ ᴛσ ᴧ sᴘєᴄɪғɪᴄ ᴛɪᴍє.\n➻ <b>/speed</b> : ᴍσᴅɪғʏ ᴘʟᴧʏʙᴧᴄᴋ sᴘєєᴅ (0.5x - 2.0x).\n➻ <b>/playmode</b> : ᴄσηᴛʀσʟ ᴡʜσ ᴄᴧη ᴜsє /play ᴄᴍᴅ.\n➻ <b>/cmddelete</b> : ᴛσɢɢʟє ᴧᴜᴛσᴍᴧᴛɪᴄ ᴅєʟєᴛɪση σғ ʙσᴛ ᴄσᴍᴍᴧηᴅs.</blockquote>\n"
+help_admin: "⊚ <b><u>ᴧᴅᴍɪη ᴄσᴍᴍᴧηᴅs :</u></b>\n\n<blockquote>💮 <b>ᴊᴜsᴛ ᴧᴅᴅ ᴄ ᴧs ᴧ ᴘʀєғɪx ᴛσ ᴛʜє ᴄσᴍᴍᴧηᴅs ᴛσ ᴄσηᴛʀσʟ ᴄʜᴧηηєʟ sᴛʀєᴧᴍɪηɢ.</b></blockquote>\n\n<blockquote>➻ <b>/pause</b> : ʜᴧʟᴛ ᴛʜє ᴄᴜʀʀєηᴛʟʏ ᴧᴄᴛɪᴠє sᴛʀєᴧᴍ.\n➻ <b>/resume</b> : ʀєsᴛᴧʀᴛ ᴛʜє ᴘᴧᴜsєᴅ ᴘʟᴧʏʙᴧᴄᴋ.\n➻ <b>/skip</b> : ᴘʟᴧʏ ᴛʜє ηєxᴛ ᴛʀᴧᴄᴋ ɪη ᴛʜє ǫᴜєᴜє.\n➻ <b>/stop</b> : ᴄєᴧsє ᴛʜє sᴛʀєᴧᴍ ᴧηᴅ єᴍᴘᴛʏ ǫᴜєᴜє.\n➻ <b>/mute</b> : ᴍᴜᴛє ᴘʟᴧʏʙᴧᴄᴋ ɪη ᴠɪᴅєσᴄʜᴧᴛ.\n➻ <b>/unmute</b> : ᴜηᴍᴜᴛє ᴘʟᴧʏʙᴧᴄᴋ ɪη ᴠɪᴅєσᴄʜᴧᴛ.\n➻ <b>/queue</b> : ᴠɪєᴡ ᴛʜє ʟɪsᴛ σғ ᴜᴘᴄσᴍɪηɢ ᴛʀᴧᴄᴋs.\n➻ <b>/jump</b> : ᴊᴜᴍᴘ ᴛσ ᴧ ɢɪᴠєη ᴛɪᴍє ɪη ᴛʀᴧᴄᴋ.\n➻ <b>/move</b> : ᴍσᴠє ᴧ ǫᴜєᴜєᴅ ᴛʀᴧᴄᴋ ᴛσ ᴧησᴛʜєʀ ᴘσsɪᴛɪση.\n➻ <b>/clear</b> : ᴄʟєᴧʀ ᴧʟʟ sσηɢs ғʀσᴍ ǫᴜєᴜє.\n➻ <b>/remove</b> : ʀєᴍσᴠє ᴧ sᴘєᴄɪғɪᴄ ᴛʀᴧᴄᴋ ғʀσᴍ ǫᴜєᴜє.\n➻ <b>/loop [1-10]</b> : ʀєᴘєᴧᴛ ᴛʜє ᴄᴜʀʀєηᴛʟʏ ᴘʟᴧʏɪηɢ sσηɢ.\n➻ <b>/shuffle</b> : ʀᴧηᴅσᴍɪᴢє ᴛʜє ǫᴜєᴜєᴅ ᴘʟᴧʏʟɪsᴛ.\n➻ <b>/seek [sєᴄs]</b> : ғσʀᴡᴧʀᴅ sєєᴋ ᴛσ ᴧ sᴘєᴄɪғɪᴄ ᴛɪᴍє.\n➻ <b>/seekback [sєᴄs]</b> : ʀєᴠєʀsє sєєᴋ ᴛσ ᴧ sᴘєᴄɪғɪᴄ ᴛɪᴍє.\n➻ <b>/speed</b> : ᴍσᴅɪғʏ ᴘʟᴧʏʙᴧᴄᴋ sᴘєєᴅ (0.5x - 2.0x).\n➻ <b>/playmode</b> : ᴄσηᴛʀσʟ ᴡʜσ ᴄᴧη ᴜsє /play ᴄᴍᴅ.\n➻ <b>/cmddelete</b> : ᴛσɢɢʟє ᴧᴜᴛσᴍᴧᴛɪᴄ ᴅєʟєᴛɪση σғ ʙσᴛ ᴄσᴍᴍᴧηᴅs.</blockquote>\n"
 
 help_auth: "⊚ <b><u>ᴧᴜᴛʜ ᴜsєʀs :</u></b>\n\n<blockquote>💮 <b>ᴧᴜᴛʜ ᴜsєʀs ᴧʀє ɢʀᴧηᴛєᴅ ᴧᴅᴍɪη ᴘʀɪᴠɪʟєɢєs ᴡɪᴛʜσᴜᴛ ʀєǫᴜɪʀɪηɢ ɢʀσᴜᴘ ᴧᴅᴍɪη sᴛᴧᴛᴜs ᴛσ ᴍᴧηᴧɢє sᴛʀєᴧᴍs.</b></blockquote>\n\n<blockquote>➻ <b>/auth [ᴜsєʀ]</b> : ᴧᴅᴅ ᴜsєʀ ᴛσ ᴧᴜᴛʜσʀɪᴢєᴅ ʟɪsᴛ.\n➻ <b>/unauth [ᴜsєʀ]</b> : ʀєᴍσᴠє ᴜsєʀ ғʀσᴍ ᴧᴜᴛʜσʀɪᴢєᴅ ʟɪsᴛ.\n➻ <b>/authlist</b> : ᴅɪsᴘʟᴧʏ ᴧʟʟ ᴧᴜᴛʜσʀɪᴢєᴅ ᴍєᴍʙєʀs.</blockquote>\n"
 
-help_bcast: "⊚ <b><u>ʙʀσᴧᴅᴄᴧsᴛ ғєᴧᴛᴜʀє [σηʟʏ ғσʀ sᴜᴅσєʀs] :</u></b>\n\n<blockquote>➻ <b>/broadcast [ᴍєssᴧɢє σʀ ʀєᴘʟʏ]</b> : sєηᴅ ᴛσ ᴧʟʟ ᴄʜᴧᴛs.\n\n➻ <b>ᴍσᴅєs</b> :\n<b>-pin</b> : ᴘɪη ᴛʜє ᴍєssᴧɢє\n<b>-pinloud</b> : ᴘɪη + ησᴛɪғʏ ᴍєᴍʙєʀs\n<b>-user</b> : ʙʀσᴧᴅᴄᴧsᴛ ᴛσ sᴛᴧʀᴛєᴅ ᴜsєʀs\n<b>-assistant</b> : sєηᴅ ᴠɪᴧ ᴧssɪsᴛᴧηᴛ\n<b>-nobot</b> : ᴅση'ᴛ sєηᴅ ғʀσᴍ ʙσᴛ\n\n⊚ єxᴧᴍᴘʟє : /broadcast -user -pin ᴛєsᴛɪηɢ ʙʀσᴧᴅᴄᴧsᴛ</blockquote>\n"
+help_bcast: "⊚ <b><u>ʙʀσᴧᴅᴄᴧsᴛ [σᴡηєʀ σηʟʏ] :</u></b>\n\n<blockquote>➻ <b>ᴄσᴍᴍᴧηᴅs</b>\n<code>/broadcast</code>, <code>/bcast</code>, <code>/gcast</code> : ᴧʟʟ ᴛʜʀєє ᴡσʀᴋ ᴛʜє sᴧᴍє</blockquote>\n\n<blockquote>➻ <b>ʜσᴡ ᴛσ ᴜsє</b>\n<code>/broadcast your message</code> : sєηᴅ ᴧ ᴛєxᴛ ᴍєssᴧɢє\nʀєᴘʟʏ ᴛσ ᴧηʏ ᴍєssᴧɢє ᴡɪᴛʜ <code>/broadcast</code> : sєηᴅ ᴛʜᴧᴛ ᴍєssᴧɢє (ᴘʜσᴛσ, ᴠɪᴅєσ, ғσʀᴡᴧʀᴅ, єᴛᴄ.)</blockquote>\n\n<blockquote>➻ <b>ᴡʜσ ɢєᴛs ɪᴛ</b>\n<code>-user</code> : σηʟʏ ᴜsєʀs (ᴅᴍ)\n<code>-group</code> : σηʟʏ ɢʀσᴜᴘs\n<code>-all</code> : ᴜsєʀs + ɢʀσᴜᴘs (ᴅєғᴧᴜʟᴛ)\n<code>-nochat</code> : єxᴄʟᴜᴅє ɢʀσᴜᴘs\n<code>-nouser</code> : єxᴄʟᴜᴅє ᴜsєʀs</blockquote>\n\n<blockquote>➻ <b>σᴘᴛɪσηs</b>\n<code>-copy</code> : sєηᴅ ᴡɪᴛʜσᴜᴛ ғσʀᴡᴧʀᴅєᴅ ᴛᴧɢ (ʀєᴘʟʏ ᴍσᴅє). ᴜsєᴅ ᴧᴜᴛσᴍᴧᴛɪᴄᴧʟʟʏ ɪғ ᴛʜє ᴍєssᴧɢє ᴄᴧηησᴛ ʙє ғσʀᴡᴧʀᴅєᴅ\n<code>-pin</code> : ᴘɪη ᴛʜє ᴍєssᴧɢє sɪʟєηᴛʟʏ\n<code>-pinloud</code> : ᴘɪη ᴧηᴅ ησᴛɪғʏ ᴍєᴍʙєʀs\n<code>-limit N</code> : sᴛσᴘ ᴧғᴛєʀ η ᴛᴧʀɢєᴛs (ɢʀσᴜᴘs ғɪʀsᴛ)\n<code>-delay S</code> : sєᴄσηᴅs ʙєᴛᴡєєη sєηᴅs (ᴅєғᴧᴜʟᴛ 0.7)\n<code>-cancel</code> : sᴛσᴘ ᴧ ʀᴜηηɪηɢ ʙʀσᴧᴅᴄᴧsᴛ</blockquote>\n\n<blockquote>⊚ <b>єxᴧᴍᴘʟєs</b>\n<code>/broadcast -user hello everyone</code>\n<code>/bcast -group -pin</code> (ʀєᴘʟʏ ᴛσ ᴧ ᴍєssᴧɢє)\n<code>/gcast -all -copy -limit 50</code> (ʀєᴘʟʏ ᴛσ ᴧ ᴍєssᴧɢє)\n<code>/broadcast -cancel</code></blockquote>\n\n<blockquote>❏ <b>ησᴛєs</b>\n• ғʟᴧɢs ᴡσʀᴋ ᴡɪᴛʜ σηє σʀ ᴛᴡσ ᴅᴧsʜєs (-ᴄσᴘʏ σʀ --ᴄσᴘʏ).\n• σηʟʏ σηє ʙʀσᴧᴅᴄᴧsᴛ ʀᴜηs ᴧᴛ ᴧ ᴛɪᴍє.\n• ᴧᴜᴛσ ᴘᴧᴜsє σғ 7.5s ᴧғᴛєʀ єᴠєʀʏ 30 sєηᴅs.\n• ᴛєxᴛ ᴍσᴅє sєηᴅs ᴘʟᴧɪη ᴛєxᴛ. ғσʀ ᴍєᴅɪᴧ σʀ ғσʀᴍᴧᴛᴛɪηɢ, ʀєᴘʟʏ ᴛσ ᴛʜє ᴍєssᴧɢє.\n• ʙʟσᴄᴋєᴅ σʀ ᴅєʟєᴛєᴅ ᴜsєʀs ғᴧɪʟ, ᴛʜє ғɪηᴧʟ ʀєᴘσʀᴛ sʜσᴡs ᴛʜє ʀєᴧsσηs.</blockquote>\n" 
 
 help_play: "⊚ <b><u>ᴘʟᴧʏ & ᴄʜᴧηηєʟ ᴘʟᴧʏ :</u></b>\n\n<blockquote>➻ <b>/play</b> : sᴛᴧʀᴛ ᴧᴜᴅɪσ sᴛʀєᴧᴍɪηɢ ɪη ᴄʜᴧᴛ.\n➻ <b>/vplay</b> : sᴛᴧʀᴛ ᴠɪᴅєσ sᴛʀєᴧᴍɪηɢ ɪη ᴄʜᴧᴛ.\n➻ <b>/playforce</b> : ɪηsᴛᴧηᴛ ᴘʟᴧʏ (σᴠєʀʀɪᴅєs ǫᴜєᴜє).</blockquote>\n\n⊚ <b><u>ᴄʜᴧηηєʟ ᴘʟᴧʏ :</u></b>\n\n<blockquote>➻ <b>/cplay</b> : ᴧᴜᴅɪσ sᴛʀєᴧᴍ ɪη ʟɪηᴋєᴅ ᴄʜᴧηηєʟ.\n➻ <b>/cvplay</b> : ᴠɪᴅєσ sᴛʀєᴧᴍ ɪη ʟɪηᴋєᴅ ᴄʜᴧηηєʟ.\n➻ <b>/cplayforce</b> : ғσʀᴄє sᴛʀєᴧᴍ ɪη ʟɪηᴋєᴅ ᴄʜᴧηηєʟ.\n➻ <b>/channelplay [ɪᴅ]</b> : ᴄσηηєᴄᴛ ᴄʜᴧηηєʟ ᴛσ ᴛʜɪs ɢʀσᴜᴘ.</blockquote>\n"
 
