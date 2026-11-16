@@ -31,9 +31,9 @@ import (
 	td "github.com/Kanha/Meow"
 	"resty.dev/v3"
 
+	"KanhaMusic/config"
 	state "KanhaMusic/kanha/core/models"
 	"KanhaMusic/kanha/utils"
-	"KanhaMusic/config"
 )
 
 type reg struct {
@@ -333,4 +333,3 @@ func SearchTracks(query string, video bool) ([]*state.Track, error) {
 	yt := ytRaw.(*YouTubePlatform)
 	return yt.VideoSearch(query)
 }
-
