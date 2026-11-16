@@ -329,4 +329,3 @@ func handleAutoplaySkip(c *td.Client, m *td.Message, cplay bool) error {
 
 	return nil
 }
-

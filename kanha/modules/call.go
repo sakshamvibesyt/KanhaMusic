@@ -318,4 +318,3 @@ func cleanSongTitleForSearch(title string) string {
 	title = strings.Split(title, "[")[0]
 	return strings.TrimSpace(title)
 }
-

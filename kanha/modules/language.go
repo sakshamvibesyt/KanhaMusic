@@ -25,12 +25,17 @@ import (
 	td "github.com/Kanha/Meow"
 
 	"KanhaMusic/config"
+	"KanhaMusic/kanha/core"
 	"KanhaMusic/kanha/database"
 	"KanhaMusic/kanha/locales"
 	"KanhaMusic/kanha/utils"
 )
 
 func langHandler(c *td.Client, m *td.Message) error {
+	if m.IsPrivate() {
+		database.AddServedUser(m.ChatID())
+		return showLangMenu(c, m)
+	}
 	if !isSuperGroup(c, m) || !filterAuthUsers(c, m) {
 		return nil
 	}
@@ -63,10 +68,7 @@ func buildLangMarkup(chatID int64, lang string, isCallback bool) *td.ReplyMarkup
 		if l == lang {
 			name = "✔️ " + name
 		}
-		row = append(row, td.InlineKeyboardButton{
-			Text: name,
-			Type: &td.InlineKeyboardButtonTypeCallback{Data: []byte("lang:" + l)},
-		})
+		row = append(row, core.DataBtn(name, "lang:"+l))
 		if len(row) == 2 {
 			rows = append(rows, row)
 			row = nil
@@ -78,14 +80,34 @@ func buildLangMarkup(chatID int64, lang string, isCallback bool) *td.ReplyMarkup
 
 	if isCallback {
 		rows = append(rows, []td.InlineKeyboardButton{
-			{
-				Text: F(chatID, "BACK_BTN"),
-				Type: &td.InlineKeyboardButtonTypeCallback{Data: []byte("set:main")},
-			},
+			core.DataBtn(F(chatID, "BACK_BTN"), langBackData(chatID)),
 		})
 	}
 
 	return &td.ReplyMarkupInlineKeyboard{Rows: rows}
+}
+
+func langBackData(chatID int64) string {
+	if chatID > 0 {
+		return "start"
+	}
+	return "set:main"
+}
+
+func editLangMessage(c *td.Client, u *td.UpdateNewCallbackQuery, text string, markup *td.ReplyMarkupInlineKeyboard) {
+	if msg, err := u.GetMessage(c); err == nil && isPhotoMessage(msg) {
+		opts := &td.EditCaptionOpts{ParseMode: td.ParseModeHTML}
+		if markup != nil {
+			opts.ReplyMarkup = markup
+		}
+		_, _ = u.EditMessageCaption(c, text, opts)
+		return
+	}
+	opts := &td.EditTextMessageOpts{ParseMode: td.ParseModeHTML}
+	if markup != nil {
+		opts.ReplyMarkup = markup
+	}
+	_, _ = u.EditMessageText(c, text, opts)
 }
 
 func langCallbackHandler(c *td.Client, u *td.UpdateNewCallbackQuery) error {
@@ -104,10 +126,7 @@ func langCallbackHandler(c *td.Client, u *td.UpdateNewCallbackQuery) error {
 			cur = config.DefaultLang
 		}
 		markup := buildLangMarkup(chatID, cur, true)
-		_, _ = u.EditMessageText(c, F(chatID, "lang_select"), &td.EditTextMessageOpts{
-			ParseMode:   td.ParseModeHTML,
-			ReplyMarkup: markup,
-		})
+		editLangMessage(c, u, F(chatID, "lang_select"), markup)
 		return nil
 	}
 
@@ -133,6 +152,6 @@ func langCallbackHandler(c *td.Client, u *td.UpdateNewCallbackQuery) error {
 
 	msg := F(chatID, "lang_success", locales.Arg{"lang_name": langName})
 	_ = u.Answer(c, 0, true, msg, "")
-	_, _ = u.EditMessageText(c, msg, &td.EditTextMessageOpts{ParseMode: td.ParseModeHTML})
+	editLangMessage(c, u, msg, nil)
 	return nil
 }

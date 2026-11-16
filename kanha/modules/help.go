@@ -1,4 +1,3 @@
-
 /*
  * ● KanhaMusic
  * ○ A high-performance engine for streaming music in Telegram voicechats.
@@ -22,6 +21,7 @@ import (
 	"fmt"
 	"html"
 	"strings"
+	"unicode/utf16"
 
 	td "github.com/Kanha/Meow"
 
@@ -157,9 +157,17 @@ func helpCallbackHandler(c *td.Client, cb *td.UpdateNewCallbackQuery) error {
 	}
 
 	if isPhotoMessage(msg) {
-		_, err = cb.EditMessageCaption(c, text, &td.EditCaptionOpts{
-			ReplyMarkup: btn,
-		})
+		if len(utf16.Encode([]rune(text))) <= 1024 {
+			_, err = cb.EditMessageCaption(c, text, &td.EditCaptionOpts{
+				ReplyMarkup: btn,
+			})
+		} else {
+			_ = msg.Delete(c, true)
+			_, err = c.SendTextMessage(chatID, text, &td.SendTextMessageOpts{
+				ParseMode:   "HTML",
+				ReplyMarkup: btn,
+			})
+		}
 	} else {
 		_, err = cb.EditMessageText(c, text, &td.EditTextMessageOpts{
 			ReplyMarkup: btn,
