@@ -185,7 +185,7 @@ run_cmd_arr() {
     local desc="$1"
     shift
     log_info "Executing: $desc ($*)"
-    if "$@" >> "$INSTALL_LOG" 2>&1; then
+    if "$@" >> "$INSTALL_LOG" 2>&1 < /dev/null; then
         return 0
     else
         local exit_status=$?
@@ -235,7 +235,9 @@ reload_shell_if_needed() {
     for profile in "$HOME/.bashrc" "$HOME/.zshrc" "$HOME/.profile"; do
         if [[ -f "$profile" ]]; then
             # shellcheck disable=SC1090
+            set +u
             source "$profile" 2>/dev/null || true
+            set -u
             print_success "Environment reloaded from $profile"
             break
         fi
@@ -598,6 +600,7 @@ check_install_deno() {
             fi
         fi
     else
+        command -v unzip >/dev/null 2>&1 || install_package "unzip" "unzip" || true
         local deno_install_script="/tmp/deno_install.sh"
         if download_file "https://deno.land/install.sh" "$deno_install_script"; then
             chmod +x "$deno_install_script"
@@ -756,9 +759,10 @@ install_ntgcalls() {
 
     [[ -z "$url" ]] && print_error "Could not determine ntgcalls URL" "check system compatibility"
 
+    rm -rf ntgcalls.zip tmp_ntg
     if download_file "$url" "ntgcalls.zip"; then
         mkdir -p tmp_ntg
-        if run_cmd_arr "Extracting ntgcalls" unzip -q ntgcalls.zip -d tmp_ntg; then
+        if run_cmd_arr "Extracting ntgcalls" unzip -qo ntgcalls.zip -d tmp_ntg; then
             mkdir -p ntgcalls
             cp tmp_ntg/include/ntgcalls.h ntgcalls/
             local lib_file

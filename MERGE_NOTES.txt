@@ -1,0 +1,31 @@
+KanhaMusic merged source
+========================
+
+Base: uploaded original repository ZIP (upstream updates)
+Preserved custom files/settings: custom HTTP health/homepage server, command
+animations, custom start flow, custom autoplay selection/history, owner-only
+/repo access, and the user's sample configuration values other than the API_HASH
+secret (blanked in the tracked sample.env for safety).
+
+Integrated upstream changes include:
+- Spotify and Deezer link/search/stream support in the Meow API platform.
+- /bug report command and its handler/localized messages.
+- Private-chat language selection and improved language callback editing.
+- Broadcast target filters, flood-wait retries, copy fallback, and failure reasons.
+- Numeric chat-ID support for /cplay.
+- Improved now-playing message handling and shared-room cplay safety fix.
+- Help caption-length handling and VC logger localization improvements.
+
+Safety/configuration:
+- Existing Render environment variables are not changed by this ZIP. Keep the
+  real API_HASH, BOT_TOKEN, API keys, database URL, and other secrets in Render's
+  Environment settings, not in tracked source files.
+- sample.env retains variable names and non-secret settings; API_HASH is blank.
+
+Validation:
+- All Go files pass gofmt parsing/formatting.
+- kanha/locales/en.yml parses successfully.
+- Full `go test ./...` / compile could not be run in this environment because
+  go.mod requires Go 1.26.0, while the available local Go is 1.23.2 and network
+  access to download the required toolchain is unavailable. Run `go test ./...`
+  with Go 1.26.0 in CI/Render before production deployment.
